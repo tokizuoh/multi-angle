@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>multi-angle</title>
+    <style>
+      /* body { background-color: gainsboro; } */
+      .main {
+        background-color: lightgray;
+        padding: 1em;
+        display: inline-block;
+      }
+      .form {
+        padding-top: 0.5em;
+      }
+      .result {
+        padding-top: 1em;
+      }
+      input#result-form {
+        background-color: rgb(244, 244, 244);
+      }
+      body {
+        font-size: medium;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>丸括弧だけエンコード</h2>
+    <p>ex.) 「(3pro)」 -> 「%283pro%29」</p>
+    <div class="main">
+      <input type="text" name="url" id="url" required>
+      <div class="form">
+          <input type="submit" value="convert" onclick="convert()">
+      </div>
+      <div class="result">
+        <input type="text" name="url" id="result-form" readonly>
+      </div>
+    </div>
+    <script>
+      function convert() {
+        var url = document.getElementById("url").value;
+        url = url.replace("(", "%28");
+        url = url.replace(")", "%29");
+        document.getElementById("result-form").value = url
+      }
+    </script>
+  </body>
+</html>
