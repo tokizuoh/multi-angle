@@ -38,8 +38,8 @@
     <script>
       function convert() {
         var url = document.getElementById("url").value;
-        url = url.replace("(", "%28");
-        url = url.replace(")", "%29");
+        url = url.replaceAll("(", "%28");
+        url = url.replaceAll(")", "%29");
         document.getElementById("result-form").value = url
       }
     </script>
